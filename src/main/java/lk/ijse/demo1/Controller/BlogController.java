@@ -29,4 +29,9 @@ public String getNumber(@PathVariable String number) {
  Blog blog = new Blog();
  return blog;
 }
+@PostMapping("/savepost")
+public void savePOst(@RequestBody Blog blog){
+
+
+}
 }
