@@ -1,7 +1,9 @@
 package lk.ijse.demo1.Controller;
 
 import lk.ijse.demo1.entity.Blog;
+import lk.ijse.demo1.repository.BlogRepository;
 import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/blog")
 
 public class BlogController {
+    @Autowired
+    public BlogRepository blogRepository ;
 
     @GetMapping("/hello")
     public String hello(){
@@ -31,7 +35,7 @@ public String getNumber(@PathVariable String number) {
 }
 @PostMapping("/savepost")
 public void savePOst(@RequestBody Blog blog){
-
+   blogRepository.save(blog);
 
 }
 }
