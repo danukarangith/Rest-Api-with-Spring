@@ -14,5 +14,6 @@ public class Blog {
     @Id
     private int id ;
     private String title ;
+    private String category;
     private String content;
 }
