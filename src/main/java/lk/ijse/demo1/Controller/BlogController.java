@@ -45,4 +45,13 @@ public List<Blog> getAllPost( ){
        return blogRepository.findAll();
 
 }
+@DeleteMapping("/deletePost")
+public void deletePost(@RequestParam("id") int id){
+        blogRepository.deleteById(id);
+}
+
+@PutMapping("/updatePost")
+public Blog updatePost(Blog blog){
+      return   blogRepository.save(blog);
+}
 }
